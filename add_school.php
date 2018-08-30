@@ -162,13 +162,31 @@
                                     <input name="city" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactPhone" class="control-label">Language</label>
-                                    <select class="form-control" id="sel1">
+                                    <label for="contactPhone" class="control-label">Language</label><br>
+                                    <!-- <select class="form-control" id="sel1">
                                       <option>Russian</option>
                                       <option>English</option>
                                       <option>Spanish</option>
                                       <option>Deutch</option>
-                                    </select>
+                                    </select> -->
+                                    <div style="margin-left: 25px">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Russian</label>
+                                      </div><br>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">English</label>
+                                      </div><br>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">Spanish</label>
+                                      </div><br>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">Deutch</label>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="checkbox" style="margin-left: 20px;">
