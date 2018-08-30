@@ -132,8 +132,12 @@
                                     <input name="personName" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="personPosition" class="control-label">Your position in school</label>
-                                    <input name="personPosition" type="text" class="form-control" data-val="true" data-val-required="">
+                                    <label for="personPosition" class="control-label">Your position in school</label><br>
+                                    <select class="selectpicker">
+                                      <option>Owner</option>
+                                      <option>Administrator</option>
+                                      <option>Teacher</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="contactPhone" class="control-label">School's phone</label>
