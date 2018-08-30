@@ -25,7 +25,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="show_modal()">
+  <button style="display: none" id="first_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+         <div id="id-newsletter-signup-modal-contents">
+            <div class="modal-background" style="z-index:0"></div>
+            <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div>
+            <div class="row">
+               <form action="/ru/home/subscribetonewsletter/" class="form col-sm-6" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#id-newsletter-signup-modal-contents" id="form0" method="post" novalidate="novalidate">
+                  <div class="header-par">Подпишитесь на нашу рассылку, чтобы первыми узнавать о лучших предложениях школ и получать советы о планировании поездки!</div>
+                  <div class="form-block" style="margin-top:2em"><label class="bold">Адрес моей электронной почты</label> <input class="form-control" name="email" data-val="true" data-val-required="" data-val-email=""></div>
+                  <div class="button-block" style="margin-top:1em"><button id="newsletter_submit" type="submit" class="btn btn-lg bold btn-success">Подписаться</button></div>
+               </form>
+               <div class="col-sm-5 col-sm-offset-1">
+                  <div class="media">
+                     <img class="sprites_landing/study.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                     <div class="media-body"><b>Узнайте, как выбрать правильную школу</b> в зависимости от ваших целей</div>
+                  </div>
+                  <div class="media">
+                     <img class="sprites_landing/world.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                     <div class="media-body"><b>Узнайте, нужна ли вам виза</b> и как ее получить</div>
+                  </div>
+                  <div class="media">
+                     <img class="sprites_landing/lock.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                     <div class="media-body"><b>Не волнуйтесь&nbsp;— адрес вашей электронной почты останется в безопасности.</b> Мы никогда не распространяем личные данные, и вы можете отказаться от рассылки в любой момент.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <!-- End Modal -->
     <!--============================= HEADER =============================-->
     <div class="nav-menu">
         <div class="bg transition">
@@ -401,6 +440,9 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
+    function show_modal(){
+      document.getElementById('first_modal').click()
+    }
       function selectChange(){
         var lang = document.getElementById('language').value
         switch (lang) {
