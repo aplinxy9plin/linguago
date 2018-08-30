@@ -127,13 +127,35 @@
                           <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Проживание</h5>
                             <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
-                              <option>Присутствует</option>
-                              <option>Отсутствует</option>
+                              <option>Принимающая семья</option>
+                              <option>Резиденция</option>
+                              <option>Апартаменты</option>
+                              <option>Студенческая квартира</option>
                             </select>
                           </div>
                           <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em"></h5>
-                            <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn">Расширенный поиск</button>
+                            <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()">Расширенный поиск</button>
+                          </div>
+                        </div>
+                        <div style="display: none; margin-top: 20px;" id="more_search">
+                          <div>
+                            <div style="display: inline-block; padding-left: 20px;" >
+                              <h5 style="font-size: 1.1em">Тип курса</h5>
+                              <select name="continue" id="cources" class="btn-group1" style="width: 150px; height: 40px;">
+                                <option>Детский</option>
+                                <option>3 недели</option>
+                              </select>
+                            </div>
+                            <div style="display: inline-block; padding-left: 20px;" >
+                              <h5 style="font-size: 1.1em">Кол-во часов в неделю</h5>
+                              <select name="continue" id="hours" class="btn-group1" style="width: 150px; height: 40px;">
+                                <option>Менее 15 часов</option>
+                                <option>15-20 часов</option>
+                                <option>20-25 часов</option>
+                                <option>Более 25 часов</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                     </div>
@@ -448,6 +470,13 @@
       <?php
         echo "var sort = '" . $sort . "';\n";
       ?>
+      function more_search(){
+        if(document.getElementById('more_search').style.display == "none"){
+          document.getElementById('more_search').style.display = "block"
+        }else{
+          document.getElementById('more_search').style.display = "none"
+        }
+      }
       //alert(sort)
       function selectChange(type){
         if(type == 'language'){

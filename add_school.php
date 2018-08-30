@@ -101,7 +101,7 @@
                             <p></p>
                         </div>
                         <div class="col-sm-5">
-                            <form style="padding-left: 2em;" method="POST" action="/ru/auth/registerschool/" novalidate="novalidate">
+                            <form style="padding-left: 2em;" id="regForm" method="POST" action="#">
                                 <div class="form-group">
                                     <label for="email" class="control-label">Email</label>
                                     <input name="email" type="text" class="form-control" data-val="true" data-val-required="">
@@ -115,8 +115,17 @@
                                     <input name="schoolName" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="schoolWebsite" class="control-label">School website</label>
-                                    <input name="schoolWebsite" type="text" class="form-control" data-val="true" data-val-required="">
+                                    <label for="schoolWebsite" class="control-label">Type School</label>
+                                    <div class="checkbox">
+                                        <label for="checkbox1" class="form-check-label ">
+                                          <input onchange="typeChange('online')" type="checkbox" id="online" name="online" value="option2" class="form-check-input"> Online
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="checkbox1" class="form-check-label ">
+                                          <input onchange="typeChange('offline')" type="checkbox" id="offline" name="offline" value="option2" class="form-check-input"> Offline
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="personName" class="control-label">Your name</label>
@@ -127,18 +136,26 @@
                                     <input name="personPosition" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactPhone" class="control-label">Contact phone</label>
+                                    <label for="contactPhone" class="control-label">School's phone</label>
                                     <input name="contactPhone" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="contactPhone" class="control-label">Country</label>
+                                    <input name="country" type="text" class="form-control" data-val="true" data-val-required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactPhone" class="control-label">Language</label>
+                                    <input name="language" type="text" class="form-control" data-val="true" data-val-required="">
+                                </div>
                                 <div class="form-group">
                                     <label class="checkbox" style="margin-left: 20px;">
-                                        <input type="checkbox" id="terms">
+                                        <input onchange="termsCheckbox()" type="checkbox" id="terms">
                                         I have read and agree to the <a href="terms/" target="_blank">Terms &amp; Conditions.</a>
                                     </label>
                                 </div>
+                                <input type="hidden" id="online_input" value=""><input type="hidden" id="offline_input" value="">
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-success bold" style="width: 100%;" disabled="" id="ok">Register school</button>
+                                    <button type="button" onclick="sendReg()" disabled class="btn btn-success bold" style="width: 100%; color: #f8f8f8" id="ok">Register school</button>
                                 </div>
                             </form>
                         </div>
@@ -207,8 +224,68 @@
         </div>
     </footer>
     <!--//END FOOTER -->
-
-
+    <?php
+      include('bd.php');
+      if(isset($_POST['email'])){
+        $name = $_POST['schoolName'];
+        $result = $mysqli->query("SELECT * FROM schools");
+        $array = [];
+        $x = false;
+        if($result->num_rows > 0){
+          while($row = $result->fetch_assoc()){
+            if($name == $row['name']){
+              $x = true;
+            }
+            array_push($array, $row);
+          }
+        }
+        if($x){
+          echo "<script>alert('Такая школа уже существует!')</script>";
+        }else{
+          // success
+          $type_school = "";
+          if(isset($_POST['online'])){
+            $type_school .= "online";
+            if(isset($_POST['offline'])){
+              $type_school .= ",offline";
+            }
+          }else{
+            $type_school .= "offline";
+          }
+          $values = "'".$_POST['schoolName']."', '".$type_school."', '".$_POST['country']."', '".$_POST['language']."', '".$_POST['contactPhone']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['personName']."', '".$_POST['personPosition']."', 'Ожидание'";
+          $sql = "INSERT INTO `new_school` ( `name`, `type_school`, `country`, `language`, `phone`, `email`, `password`, `person_name`, `position`, `status`) VALUES (".$values.")";
+          $result = $mysqli->query($sql);
+          echo "<script>alert('success');window.location.href = 'index.php';</script>";
+        }
+      }
+    ?>
+    <script>
+      function termsCheckbox(){
+        if(document.getElementById('terms').checked){
+          document.getElementById('ok').disabled = false
+        }else{
+          document.getElementById('ok').disabled = true
+        }
+      }
+      function sendReg(){
+        var countFields = document.getElementsByClassName('form-control').length
+        var x = false
+        for (var i = 0; i < countFields; i++) {
+          if(document.getElementsByClassName('form-control')[i].value == ''){
+            alert('You have a empty field');
+            x = true
+            break;
+          }
+        }
+        if(!x){
+          if(document.getElementById('online').checked == true || document.getElementById('offline').checked == true){
+            document.getElementById('regForm').submit();
+          }else{
+            alert("Choose school's type")
+          }
+        }
+      }
+    </script>
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
