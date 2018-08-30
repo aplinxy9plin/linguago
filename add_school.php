@@ -24,6 +24,10 @@
     <!-- Hover Effects -->
     <link rel="stylesheet" href="css/set1.css">
     <!-- Main CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css'>
+<!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -133,23 +137,38 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="personPosition" class="control-label">Your position in school</label><br>
-                                    <select class="selectpicker">
+                                    <select class="form-control" id="sel1">
                                       <option>Owner</option>
                                       <option>Administrator</option>
                                       <option>Teacher</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactPhone" class="control-label">School's phone</label>
-                                    <input name="contactPhone" type="text" class="form-control" data-val="true" data-val-required="">
+                                    <label for="contactPhone" class="control-label">School's phone</label><br>
+                                    <input name="contactPhone" type="text" class="form-control telephone" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="contactPhone" class="control-label">Country</label>
-                                    <input name="country" type="text" class="form-control" data-val="true" data-val-required="">
+                                    <select class="form-control" id="sel1">
+                                      <option>Russia</option>
+                                      <option>USA</option>
+                                      <option>Spain</option>
+                                      <option>UK</option>
+                                      <option>Germany</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city" class="control-label">City</label><br>
+                                    <input name="city" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="contactPhone" class="control-label">Language</label>
-                                    <input name="language" type="text" class="form-control" data-val="true" data-val-required="">
+                                    <select class="form-control" id="sel1">
+                                      <option>Russian</option>
+                                      <option>English</option>
+                                      <option>Spanish</option>
+                                      <option>Deutch</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="checkbox" style="margin-left: 20px;">
@@ -295,10 +314,12 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        // Want to customize colors? go to snazzymaps.com
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.7/js/intlTelInput.js'></script>
 
-    </script>
+
+
+    <script  src="js/index.js"></script>
 </body>
 
 </html>
