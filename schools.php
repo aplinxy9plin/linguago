@@ -103,41 +103,58 @@
                             <h5 style="font-size: 1.1em">Сортировать</h5>
                             <select name="sort" id="language" class="btn-group1" style="width: 150px; height: 40px;">
                               <option>По оценке</option>
-                              <option>Немецкий</option>
-                              <option>Испанский</option>
+                              <option>Сначала дешевые</option>
+                              <option>Сначала дорогие</option>
                             </select>
                           </div>
                         </div>
-                        <div style="margin-top: 20px" class="col-sm-12">
+                        <div style="padding-top: 20px; padding-bottom: 10px" class="col-sm-12">
                           <div style="display: inline-block;" >
-                            <h5 style="font-size: 1.1em">Дата начала курса</h5>
-                            <select name="date_start" id="language" class="btn-group1" style="width: 150px; height: 40px;">
-                              <option>1.09.2018</option>
-                              <option>8.09.2018</option>
-                              <option>16.09.2018</option>
-                            </select>
-                          </div>
-                          <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Длительность</h5>
                             <select name="continue" id="country" class="btn-group1" style="width: 150px; height: 40px;">
                               <option>2 недели</option>
                               <option>3 недели</option>
                             </select>
                           </div>
-                          <div style="display: inline-block; padding-left: 20px;" >
-                            <h5 style="font-size: 1.1em">Проживание</h5>
-                            <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
-                              <option>Принимающая семья</option>
-                              <option>Резиденция</option>
-                              <option>Апартаменты</option>
-                              <option>Студенческая квартира</option>
-                            </select>
-                          </div>
-                          <div style="display: inline-block; padding-left: 20px;" >
-                            <h5 style="font-size: 1.1em"></h5>
-                            <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()">Расширенный поиск</button>
-                          </div>
-                        </div>
+                        <?php
+                        $sort = "all";
+                        if(isset($_GET['sort'])){
+                          $sort = $_GET['sort'];
+                          if($sort == 'offline'){
+                            echo `echo '
+                              <div style="display: inline-block; padding-left: 20px" >
+                                <h5 style="font-size: 1.1em">Дата начала курса</h5>
+                                <select name="date_start" id="language" class="btn-group1" style="width: 150px; height: 40px;">
+                                  <option>1.09.2018</option>
+                                  <option>8.09.2018</option>
+                                  <option>16.09.2018</option>
+                                </select>
+                              </div>
+                              <div style="display: inline-block; padding-left: 20px;" >
+                                <h5 style="font-size: 1.1em">Проживание</h5>
+                                <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
+                                  <option>Принимающая семья</option>
+                                  <option>Резиденция</option>
+                                  <option>Апартаменты</option>
+                                  <option>Студенческая квартира</option>
+                                </select>
+                              </div>
+                              <div style="display: inline-block; padding-left: 20px;" >
+                                <h5 style="font-size: 1.1em"></h5>
+                                <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()">Расширенный поиск</button>
+                              </div>
+                            </div>';`;
+                          }else{
+                            echo '<div style="display: inline-block; padding-left: 20px"><h5 style="font-size: 1.1em">Тип курса</h5>
+                            <select name="continue" id="cources" class="btn-group1" style="width: 150px; height: 40px;">
+                              <option>Детский</option>
+                              <option>3 недели</option>
+                            </select></div>';
+                          }
+                        }else{
+                          $sort = 'all';
+                        }
+                        ?>
                         <div style="display: none; margin-top: 20px;" id="more_search">
                           <div>
                             <div style="display: inline-block; padding-left: 20px;" >

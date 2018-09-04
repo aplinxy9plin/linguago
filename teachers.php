@@ -92,19 +92,11 @@
                             </select>
                           </div>
                           <div style="display: inline-block; padding-left: 20px;" >
-                            <h5 style="font-size: 1.1em">Город</h5>
-                            <select name="city" id="city" class="btn-group1" onchange="selectChange()" style="width: 150px; height: 40px;">
-                              <option>Все</option>
-                              <option>Немецкий</option>
-                              <option>Испанский</option>
-                            </select>
-                          </div>
-                          <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Сортировать</h5>
                             <select name="sort" id="language" class="btn-group1" onchange="selectChange()" style="width: 150px; height: 40px;">
                               <option>По оценке</option>
-                              <option>Немецкий</option>
-                              <option>Испанский</option>
+                              <option>Сначала дешевые</option>
+                              <option>Сначала дорогие</option>
                             </select>
                           </div>
                         </div>

@@ -27,6 +27,7 @@
 
 <body onload="show_modal()">
   <button style="display: none" id="first_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <button style="display: none" id="callback_a" type="button" class="btn btn-info btn-lg" data-toggle="modal1" data-target="#callback_phone">Open Modal</button>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -64,6 +65,29 @@
 
     </div>
   </div>
+  <div class="modal fade" id="callback_phone" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+         <div id="id-newsletter-signup-modal-contents">
+            <div class="modal-background" style="z-index:0"></div>
+            <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div>
+            <div class="row">
+               <form action="#" class="form col-sm-6" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#id-newsletter-signup-modal-contents" id="form0" method="post" novalidate="novalidate">
+                  <div class="header-par">Введите номер телефона</div>
+                  <div class="form-block" style="margin-top:2em"><label class="bold">Электронная почта</label> <input class="form-control" name="email" data-val="true" data-val-required="" data-val-email=""></div>
+                  <div class="form-block" style="margin-top:2em"><label class="bold">Номер телефона</label> <input class="form-control" name="phone" data-val="true" data-val-required="" data-val-email=""></div>
+                  <div class="button-block" style="margin-top:1em"><button id="newsletter_submit" type="submit" class="btn btn-lg bold btn-success">Заказать звонок</button></div>
+               </form>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
   <!-- End Modal -->
     <!--============================= HEADER =============================-->
     <div class="nav-menu">
@@ -91,7 +115,7 @@
                                         <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">8-913-109-26-84</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="javascript:alert('Мы вам перезвоним')" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Заказать обратный звонок</a>
+                                        <a href="javascript:callback_b()" class="nav-link" data-toggle="modal" data-target="#callback_phone" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Заказать обратный звонок</a>
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Р</a>
@@ -216,7 +240,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 category-responsive">
-                  <a href="#" class="category-wrap">
+                  <a class="category-wrap">
                       <div class="category-block">
                           <img src="images/school.svg" width="190px">
                           <h6 style="font-size: 2em">Запись в школу и решение любых вопросов</h6>
@@ -224,7 +248,7 @@
                   </a>
                 </div>
                 <div class="col-md-4 category-responsive">
-                  <a href="#" class="category-wrap">
+                  <a class="category-wrap">
                       <div class="category-block">
                           <img src="images/visa.svg" width="190px">
                           <h6 style="font-size: 2em">Помощь в оформление <br>визы</h6>
@@ -232,7 +256,7 @@
                   </a>
                 </div>
                 <div class="col-md-4 category-responsive">
-                  <a href="#" class="category-wrap">
+                  <a class="category-wrap">
                       <div class="category-block">
                           <img src="images/operator.svg" width="190px">
                           <h6 style="font-size: 2em">Консультация по выбору <br>школу</h6>
@@ -442,6 +466,9 @@
     <script>
     function show_modal(){
       document.getElementById('first_modal').click()
+    }
+    function callback_b(){
+      document.getElementById('callback_a').click()
     }
       function selectChange(){
         var lang = document.getElementById('language').value
