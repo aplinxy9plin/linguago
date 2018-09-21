@@ -458,9 +458,6 @@
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Наши приемущества</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Условия использования сайта</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Обработка пресональных данных</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Вакансии</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Партнерская программа</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Карта сайта</a></li>
                     </ul>
                   </div>
                 </div>
@@ -471,7 +468,6 @@
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Консультации по оформлению виз</a></li>
                     </ul>
                   </div>
                 </div>
