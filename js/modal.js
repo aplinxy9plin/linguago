@@ -139,10 +139,6 @@ var Modal = (function() {
       div.style.opacity = '1';
       div.removeAttribute('style');
 
-			/**
-			* iterate through the modals and modal contents and triggers to remove their active classes.
-      * remove the inline css from the trigger to move it back into its original position.
-			*/
 
 			for (var i = 0; i < len; i++) {
 				modals[i].classList.remove('modal--active');

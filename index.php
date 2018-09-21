@@ -10,7 +10,7 @@
     <meta name="description" content="#">
     <meta name="keywords" content="#">
     <!-- Page Title -->
-    <title>LINGUAGO</title>
+    <title>Mylingua</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -142,7 +142,7 @@
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
                                     <h1 style="font-size: 4em">ЯЗЫКОВЫЕ КУРСЫ ПО ВСЕМУ МИРУ</h1>
-                                    <h5 style="font-size: 2em">ПОЗНАВАЙ МИР ВМЕСТЕ С LINGUAGO</h5>
+                                    <h5 style="font-size: 2em">ПОЗНАВАЙ МИР ВМЕСТЕ С Mylingua</h5>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +271,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="add-listing-wrap">
-                        <h2>КАК БРОНИРОВАТЬ КУРС НА LINGUAGO</h2>
+                        <h2>КАК БРОНИРОВАТЬ КУРС НА Mylingua</h2>
                         <center><img src="images/plan.png" width="700px"></center>
                         <!--<p>Начни учиться за границей прямо сейчас</p>-->
                     </div>
@@ -410,9 +410,6 @@
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Наши приемущества</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Условия использования сайта</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Обработка пресональных данных</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Вакансии</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Партнерская программа</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Карта сайта</a></li>
                     </ul>
                   </div>
                 </div>
@@ -423,7 +420,6 @@
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Консультации по оформлению виз</a></li>
                     </ul>
                   </div>
                 </div>

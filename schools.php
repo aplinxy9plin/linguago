@@ -12,7 +12,7 @@
     <!-- Favicons -->
     <link rel="shortcut icon" href="#">
     <!-- Page Title -->
-    <title>LINGUAGO</title>
+    <title>Mylingua</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.php">LINGUAGO</a>
+                        <a class="navbar-brand" href="index.php">Mylingua</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-menu"></span>
             </button>
@@ -91,6 +91,7 @@
                               <option>Англия (2)</option>
                             </select>
                           </div>
+                          <input id="datepicker" width="276" />
                           <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Город</h5>
                             <select name="city" id="city" class="btn-group1" style="width: 150px; height: 40px;">
@@ -101,7 +102,7 @@
                           </div>
                           <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Сортировать</h5>
-                            <select name="sort" id="language" class="btn-group1" style="width: 150px; height: 40px;">
+                            <select onchange="getPrice()" name="sort" id="sort_b" class="btn-group1" style="width: 150px; height: 40px;">
                               <option>По оценке</option>
                               <option>Сначала дешевые</option>
                               <option>Сначала дорогие</option>
@@ -109,13 +110,18 @@
                           </div>
                         </div>
                         <div style="padding-top: 20px; padding-bottom: 10px" class="col-sm-12">
-                          <div style="display: inline-block;" >
+                          <div class="form-inline" style="margin-top:0.5em; display: inline-block;">
+                            <h5 style="font-size: 1.1em">Длительность</h5>
+                            <input type="number" class="form-control valid" min="1" value="2" name="Weeks" style="width:4em" data-val="true" data-val-required="">
+                             недели
+                           </div>
+                          <!-- <div style="display: inline-block;" >
                             <h5 style="font-size: 1.1em">Длительность</h5>
                             <select name="continue" id="country" class="btn-group1" style="width: 150px; height: 40px;">
                               <option>2 недели</option>
                               <option>3 недели</option>
                             </select>
-                          </div>
+                          </div> -->
                         <?php
                         $sort = "all";
                         if(isset($_GET['sort'])){
@@ -153,6 +159,29 @@
                           }
                         }else{
                           $sort = 'all';
+                          echo `echo '
+                            <div style="display: inline-block; padding-left: 20px" >
+                              <h5 style="font-size: 1.1em">Дата начала курса</h5>
+                              <select name="date_start" id="language" class="btn-group1" style="width: 150px; height: 40px;">
+                                <option>1.09.2018</option>
+                                <option>8.09.2018</option>
+                                <option>16.09.2018</option>
+                              </select>
+                            </div>
+                            <div style="display: inline-block; padding-left: 20px;" >
+                              <h5 style="font-size: 1.1em">Проживание</h5>
+                              <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
+                                <option>Принимающая семья</option>
+                                <option>Резиденция</option>
+                                <option>Апартаменты</option>
+                                <option>Студенческая квартира</option>
+                              </select>
+                            </div>
+                            <div style="display: inline-block; padding-left: 20px;" >
+                              <h5 style="font-size: 1.1em"></h5>
+                              <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()">Расширенный поиск</button>
+                            </div>
+                          </div>';`;
                         }
                         ?>
                         <div style="display: none; margin-top: 20px;" id="more_search">
@@ -487,6 +516,60 @@
       <?php
         echo "var sort = '" . $sort . "';\n";
       ?>
+      var prices = [];
+      var c = document.getElementsByClassName("featured-place-wrap").length
+      function getPrice(){
+        prices = [];
+        for(var i = 0; i < document.getElementsByClassName("featured-place-wrap").length; i++){
+            prices.push(parseInt(document.getElementsByClassName("featured-place-wrap")[i].children[0].innerText.split('$').pop().split(' рублей').shift()))
+        }
+        prices = prices.sort((a, b) => a - b);
+        changeSort()
+      }
+      function chromeOuterHTML(oldElem, outerhtml){
+        var el = document.createElement('div');
+        el.innerHTML = outerhtml;
+        var parentNode = oldElem.parentNode;
+        var range = document.createRange();
+                range.selectNodeContents(el);
+                var documentFragment = range.extractContents();
+                    setTimeout(function () {
+                        parentNode.insertBefore(documentFragment, oldElem);
+                        parentNode.removeChild(oldElem);
+            }, 1);
+      }
+      function compareNumbers(a, b) {
+        return a - b;
+      }
+      function changeSort(){
+        if(document.getElementById('sort_b').value == 'Сначала дешевые'){
+          var c = document.getElementsByClassName("featured-place-wrap").length;
+          for(var i = 0; i < c; i++){
+            for (var j = 0; j < c; j++) {
+              if($('.featured-place-wrap')[i].children[0].innerText.split('$').pop().split(' рублей').shift() == prices[j]){
+                console.log('yolo yolo');
+                chromeOuterHTML($('.featured-place-wrap')[j], $('.featured-place-wrap')[i].outerHTML)
+              }
+            }
+          }
+        }else if (document.getElementById('sort_b').value == 'Сначала дорогие') {
+          var p = []
+          for (var i = 0; i < prices.length; i++) {
+            p.push(prices[prices.length-1-i]);
+          }
+          prices = p
+          var c = document.getElementsByClassName("featured-place-wrap").length;
+          for(var i = 0; i < c; i++){
+            for (var j = 0; j < c; j++) {
+              if($('.featured-place-wrap')[i].children[0].innerText.split('$').pop().split(' рублей').shift() == prices[j]){
+                chromeOuterHTML($('.featured-place-wrap')[j], $('.featured-place-wrap')[i].outerHTML)
+              }
+            }
+          }
+        }else{
+          // By marks
+        }
+      }
       function more_search(){
         if(document.getElementById('more_search').style.display == "none"){
           document.getElementById('more_search').style.display = "block"
@@ -618,6 +701,11 @@
       ?>
         $(".map-icon").click(function() {
             $(".map-fix").toggle();
+        });
+    </script>
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
         });
     </script>
     <script>

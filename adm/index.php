@@ -158,7 +158,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <h1>LINGUAGO</h1>
+                    <h1>Mylingua</h1>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

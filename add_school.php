@@ -12,7 +12,7 @@
     <!-- Favicons -->
     <link rel="shortcut icon" href="#">
     <!-- Page Title -->
-    <title>LINGUAGO</title>
+    <title>Mylingua</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.php">LINGUAGO</a>
+                        <a class="navbar-brand" href="index.php">Mylingua</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-menu"></span>
             </button>
@@ -83,7 +83,7 @@
                         <div class="col-sm-7" style="border-right: 1px solid #ddd; padding-right: 3em; padding-top: 1em;">
                             <h2>Dear partner,</h2>
                             <p>
-                                Welcome to LINGUAGO — an online platform for booking quality language courses and accommodation worldwide.
+                                Welcome to Mylingua — an online platform for booking quality language courses and accommodation worldwide.
                                 Please fill in the form below. Our administrators will contact you shortly afterwards.
                             </p>
                             <p>
@@ -95,7 +95,7 @@
                                 <a href="/ru/promote_school/youtube/">See how you can grow with LinguaTrip</a>
                             </div>
                             <p>
-                            </p><h4>About LINGUAGO</h4>
+                            </p><h4>About Mylingua</h4>
                                 <ul>
                                     <li>team with 15+ years experience in language travel</li>
                                     <li>500 Startups portfolio company (top Silicon Valley accelerator)</li>
@@ -136,8 +136,12 @@
                                     <input name="personName" type="text" class="form-control" data-val="true" data-val-required="">
                                 </div>
                                 <div class="form-group">
+                                    <label for="languages" class="control-label"></label>
+                                    <input name="languages" type="hidden" id="lang_hidden" class="form-control" data-val="true" data-val-required="">
+                                </div>
+                                <div class="form-group">
                                     <label for="personPosition" class="control-label">Your position in school</label><br>
-                                    <select class="form-control" id="sel1" name="personPosition">
+                                    <select class="form-control" name="personPosition">
                                       <option>Owner</option>
                                       <option>Administrator</option>
                                       <option>Teacher</option>
@@ -149,7 +153,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="contactPhone" class="control-label">Country</label>
-                                    <select class="form-control" id="sel1" name="countrys">
+                                    <select class="form-control" name="country">
                                       <option value="United States">United States</option>
                                     	<option value="United Kingdom">United Kingdom</option>
                                     	<option value="Afghanistan">Afghanistan</option>
@@ -407,19 +411,19 @@
                                     </select> -->
                                     <div style="margin-left: 25px">
                                       <div class="form-check form-check-inline">
-                                        <input name="russian_lang" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <input onchange="add_lang('Russian', 1)" name="russian_lang" class="form-check-input lang_b" type="checkbox" id="lang_1" value="option1">
                                         <label class="form-check-label" for="inlineCheckbox1">Russian</label>
                                       </div><br>
                                       <div class="form-check form-check-inline">
-                                        <input name="english_lang" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <input onchange="add_lang('English', 2)" name="english_lang" class="form-check-input lang_b" type="checkbox" id="lang_2" value="option2">
                                         <label class="form-check-label" for="inlineCheckbox2">English</label>
                                       </div><br>
                                       <div class="form-check form-check-inline">
-                                        <input name="spanish_lang" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <input onchange="add_lang('Spanish', 3)" name="spanish_lang" class="form-check-input lang_b" type="checkbox" id="lang_3" value="option2">
                                         <label class="form-check-label" for="inlineCheckbox2">Spanish</label>
                                       </div><br>
                                       <div class="form-check form-check-inline">
-                                        <input name="deutch_lang" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <input onchange="add_lang('Deutch', 4)" name="deutch_lang" class="form-check-input lang_b" type="checkbox" id="lang_4" value="option2">
                                         <label class="form-check-label" for="inlineCheckbox2">Deutch</label>
                                       </div>
                                     </div>
@@ -529,14 +533,43 @@
           }else{
             $type_school .= "offline";
           }
-          $values = "'".$_POST['schoolName']."', '".$type_school."', '".$_POST['country']."', '".$_POST['language']."', '".$_POST['contactPhone']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['personName']."', '".$_POST['personPosition']."', 'Ожидание'";
-          $sql = "INSERT INTO `new_school` ( `name`, `type_school`, `country`, `language`, `phone`, `email`, `password`, `person_name`, `position`, `status`) VALUES (".$values.")";
+          $values = "'".$_POST['schoolName']."', '".$type_school."', '".$_POST['country']."', '".$_POST['languages']."', '".$_POST['contactPhone']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['personName']."', '".$_POST['personPosition']."', 'Ожидание', '".$_POST['city']."'";
+          $sql = "INSERT INTO `new_school` ( `name`, `type_school`, `country`, `language`, `phone`, `email`, `password`, `person_name`, `position`, `status`, `city`) VALUES (".$values.")";
           $result = $mysqli->query($sql);
           echo "<script>alert('Спассибо за регистрацию. Дальнейшие инструкции на почте.');window.location.href = 'index.php';</script>";
         }
       }
     ?>
     <script>
+      var languages = [];
+      function add_lang(lang, id){
+        // alert(123)
+        if(document.getElementById('lang_'+id).checked){
+          // alert(languages)
+          if(languages[0] !== undefined){
+            var ch = true;
+            for (var i = 0; i < languages.length; i++) {
+              if(languages[i] == lang){
+                ch = false
+              }
+            }
+            if(ch){
+              languages.push(lang)
+            }
+          }else{
+            languages.push(lang)
+            // alert(languages)
+          }
+        }else{
+          // document.getElementById('lang_'+id).splice(2, 1)
+          for (var i = 0; i < languages.length; i++) {
+            if(lang == languages[i]){
+              languages.splice(i, 1)
+            }
+          }
+        }
+        console.log(languages);
+      }
       function termsCheckbox(){
         if(document.getElementById('terms').checked){
           document.getElementById('ok').disabled = false
@@ -545,21 +578,35 @@
         }
       }
       function sendReg(){
-        var countFields = document.getElementsByClassName('form-control').length
-        var x = false
-        for (var i = 0; i < countFields; i++) {
-          if(document.getElementsByClassName('form-control')[i].value == ''){
-            alert('You have a empty field');
-            x = true
-            break;
+        var check = true;
+        var counter = 1;
+        for (var i = 1; i < 5; i++) {
+          if(document.getElementById('lang_'+i).checked == false){
+            counter += 1
           }
         }
-        if(!x){
-          if(document.getElementById('online').checked == true || document.getElementById('offline').checked == true){
-            document.getElementById('regForm').submit();
-          }else{
-            alert("Choose school's type")
+        if(counter !== 4){
+          var lang_string = languages.join(',')
+          console.log(lang_string);
+          document.getElementById('lang_hidden').value = lang_string
+          var countFields = document.getElementsByClassName('form-control').length
+          var x = false
+          for (var i = 0; i < countFields; i++) {
+            if(document.getElementsByClassName('form-control')[i].value == ''){
+              alert('You have a empty field');
+              x = true
+              break;
+            }
           }
+          if(!x){
+            if(document.getElementById('online').checked == true || document.getElementById('offline').checked == true){
+              // document.getElementById('regForm').submit();
+            }else{
+              alert("Choose school's type")
+            }
+          }
+        }else{
+          alert('Choose just one, or more language for teaching')
         }
       }
     </script>
