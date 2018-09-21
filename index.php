@@ -405,9 +405,9 @@
                   <div class="row">
                     <ul style="list-style: none">
                       <li><h6 style="color: #f8f8f8">О компании</h6></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">О нас</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Контакты</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Наши приемущества</a></li>
+                      <li><a href="about.php" style="color: #f8f8f8; text-decoration: underline;">О нас</a></li>
+                      <li><a href="contact.php" style="color: #f8f8f8; text-decoration: underline;">Контакты</a></li>
+                      <li><a href="advantages.php" style="color: #f8f8f8; text-decoration: underline;">Наши приемущества</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Условия использования сайта</a></li>
                       <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Обработка пресональных данных</a></li>
                     </ul>
