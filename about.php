@@ -145,8 +145,8 @@
                         <li><a href="about.php" style="color: #f8f8f8; text-decoration: underline;">О нас</a></li>
                         <li><a href="contact.php" style="color: #f8f8f8; text-decoration: underline;">Контакты</a></li>
                         <li><a href="advantages.php" style="color: #f8f8f8; text-decoration: underline;">Наши приемущества</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Условия использования сайта</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Обработка пресональных данных</a></li>
+                        <li><a href="docs/Условия%20использования%20сайта%20Mylingua.online.docx" style="color: #f8f8f8; text-decoration: underline;">Условия использования сайта</a></li>
+                        <li><a href="docs/Политика%20конфиденциальности%20MyLingua.online.docx" style="color: #f8f8f8; text-decoration: underline;">Обработка пресональных данных</a></li>
                       </ul>
                     </div>
                   </div>
