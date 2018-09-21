@@ -1,0 +1,48 @@
+{
+  "WalkThrough" : {
+    "title_1" : "LANGUAGES COURSES",
+    "title_2" : "AROUND THE WORLD",
+    "choose_lang_curr" : "select language and currency",
+    "choose_lang_coun" : "select language and country",
+    "start_now" : "start now"
+  },
+  "school" : {
+    "language" : "language",
+    "country" : "country",
+    "city" : "city",
+    "sort" : "Sort by",
+    "date" : "Start date",
+    "continue" : "Duration",
+    "living" : "Accommodation",
+    "more_search" : "Advanced filters",
+    "living1" : "Host family",
+    "living2" : "Residence",
+    "living3" : "Apartment",
+    "living4" : "Student apartment",
+    "week" : "week",
+    "weeks" : "weeks",
+    "review" : "review",
+    "reviews" : "reviews"
+  },
+  "languages" : {
+    "ru" : "Russian",
+    "en" : "English",
+    "china" : "Chinese",
+    "de" : "German",
+    "fr" : "French",
+    "sp" : "Spanish"
+  },
+  "country" : {
+    "usa_c" : "USA",
+    "eng_c" : "United Kingdom",
+    "sp_c" : "Spain",
+    "de_c" : "Germany",
+    "fr_c" : "France"
+  },
+  "currency" : {
+    "ru_rub" : "Russian ruble",
+    "ua" : "Hryvna",
+    "dollar_usa" : "U.S.dollar",
+    "euro" : "Euro"
+  }
+}

@@ -36,31 +36,31 @@
                     <div class="row detail-checkbox-wrap">
                         <div class="col-sm-12">
                           <div >
-                            <h5 style="font-size: 1.1em">Язык</h5>
+                            <h5 style="font-size: 1.1em" id="js_lang">Язык</h5>
                             <select name="language" id="language" class="btn-group1" onchange="selectChange('language')" style="width: 150px; height: 40px; box-shadow: none">
-                              <option>Английский</option>
-                              <option>Немецкий</option>
-                              <option>Испанский</option>
+                              <option id="js_ru">Английский</option>
+                              <option id="js_de">Немецкий</option>
+                              <option id="js_sp">Испанский</option>
                             </select>
                           </div><br>
                           <div>
-                            <h5 style="font-size: 1.1em">Страна</h5>
+                            <h5 style="font-size: 1.1em" id="js_country">Страна</h5>
                             <select name="country" id="country" class="btn-group1" onchange="selectChange('country')" style="width: 150px; height: 40px;">
-                              <option>США (5)</option>
-                              <option>Англия (2)</option>
+                              <option id="js_usa">США (5)</option>
+                              <option id="js_eng">Англия (2)</option>
                             </select>
                           </div><br>
                           <!-- <input id="datepicker" width="276" /> -->
                           <div  >
-                            <h5 style="font-size: 1.1em">Город</h5>
+                            <h5 style="font-size: 1.1em" id="js_city">Город</h5>
                             <select name="city" id="city" class="btn-group1" style="width: 150px; height: 40px;">
-                              <option>Все</option>
+                              <option>All</option>
                               <option>Немецкий</option>
                               <option>Испанский</option>
                             </select>
                           </div>
                           <div  >
-                            <h5 style="font-size: 1.1em">Сортировать</h5>
+                            <h5 style="font-size: 1.1em" id="js_sort">Сортировать</h5>
                             <select onchange="getPrice()" name="sort" id="sort_b" class="btn-group1" style="width: 150px; height: 40px;">
                               <option>По оценке</option>
                               <option>Сначала дешевые</option>
@@ -70,9 +70,9 @@
                         </div>
                         <div  class="col-sm-12">
                           <div class="form-inline" style="margin-top:0.5em; ">
-                            <h5 style="font-size: 1.1em">Длительность</h5>
+                            <h5 style="font-size: 1.1em" id="js_cont">Длительность</h5>
                             <input type="number" class="form-control valid" min="1" value="2" name="Weeks" style="width:4em" data-val="true" data-val-required="">
-                             недели
+                             <p id="js_weeks">недели</p>
                            </div>
                           <!-- <div  >
                             <h5 style="font-size: 1.1em">Длительность</h5>
@@ -88,7 +88,7 @@
                           if($sort == 'offline'){
                             echo `echo '
                               <div style=" padding-left: 20px" >
-                                <h5 style="font-size: 1.1em">Дата начала курса</h5>
+                                <h5 style="font-size: 1.1em" id="js_date">Дата начала курса</h5>
                                 <select name="date_start" id="language" class="btn-group1" style="width: 150px; height: 40px;">
                                   <option>1.09.2018</option>
                                   <option>8.09.2018</option>
@@ -96,17 +96,18 @@
                                 </select>
                               </div>
                               <div style=" padding-left: 20px;" >
-                                <h5 style="font-size: 1.1em">Проживание</h5>
+                                <h5 style="font-size: 1.1em" id="js_living">Проживание</h5>
                                 <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
-                                  <option>Принимающая семья</option>
-                                  <option>Резиденция</option>
-                                  <option>Апартаменты</option>
-                                  <option>Студенческая квартира</option>
+                                  <option id="js_living1">Принимающая семья</option>
+                                  <option id="js_living2">Резиденция</option>
+                                  <option id="js_living3">Апартаменты</option>
+                                  <option id="js_living4">Студенческая квартира</option>
+                                  <option id="js_living5">Без проживания</option>
                                 </select>
                               </div>
                               <div style=" padding-left: 20px;" >
                                 <h5 style="font-size: 1.1em"></h5>
-                                <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()">Расширенный поиск</button>
+                                <button style="width: 180px; height: 40px; background-color: #F8F8F8" class="btn" onclick="more_search()" id="js_more_search">Расширенный поиск</button>
                               </div>
                             </div>';`;
                           }else{
@@ -120,7 +121,7 @@
                           $sort = 'all';
                           echo `echo '
                             <div style=" padding-left: 20px" >
-                              <h5 style="font-size: 1.1em">Дата начала курса</h5>
+                              <h5 style="font-size: 1.1em" id="js_date">Дата начала курса</h5>
                               <select name="date_start" id="language" class="btn-group1" style="width: 150px; height: 40px;">
                                 <option>1.09.2018</option>
                                 <option>8.09.2018</option>
@@ -128,12 +129,13 @@
                               </select>
                             </div>
                             <div style=" padding-left: 20px;" >
-                              <h5 style="font-size: 1.1em">Проживание</h5>
+                              <h5 style="font-size: 1.1em" id="js_living">Проживание</h5>
                               <select name="living" id="city" class="btn-group1" style="width: 150px; height: 40px;">
-                                <option>Принимающая семья</option>
-                                <option>Резиденция</option>
-                                <option>Апартаменты</option>
-                                <option>Студенческая квартира</option>
+                                <option id="js_living1">Принимающая семья</option>
+                                <option id="js_living2">Резиденция</option>
+                                <option id="js_living3">Апартаменты</option>
+                                <option id="js_living4">Студенческая квартира</option>
+                                <option id="js_living5">Без проживания</option>
                               </select>
                             </div>
                             <div style=" padding-left: 20px;" >
@@ -540,7 +542,7 @@
               .find('option')
               .remove()
               .end()
-              .append('<option>США (5)</option><option>Англия (2)</option>')
+              .append('<option id="js_usa">США (5)</option><option id="js_eng">Англия (2)</option>')
             ;
             break;
           case 'Немецкий':
@@ -548,7 +550,7 @@
               .find('option')
               .remove()
               .end()
-              .append('<option>Германия (3)</option>')
+              .append('<option id="js_de_c">Германия (3)</option>')
             ;
             break;
           case 'Испанский':
@@ -556,7 +558,7 @@
               .find('option')
               .remove()
               .end()
-              .append('<option>Испания (4)</option>')
+              .append('<option id="js_sp_c">Испания (4)</option>')
             ;
             break;
           default:
@@ -595,6 +597,12 @@
           }
         }
       }
+
+      $.getJSON("localize/ru.json", function(data) {
+          $('')
+          // console.log(data);
+      });
+
       <?php
         if(isset($language)){
           echo "selectChangeOnLoad('".$language."');\n";

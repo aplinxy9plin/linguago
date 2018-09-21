@@ -1,0 +1,49 @@
+{
+  "WalkThrough" : {
+    "title_1" : "CURSOS DE IDIOMAS",
+    "title_2" : "POR TODO EL MUNDO",
+    "choose_lang_curr" : "Elegir idioma y moneda",
+    "choose_lang_coun" : "Elegir idioma y pais",
+    "start_now" : "empezar (ahora)"
+  },
+  "school" : {
+    "language" : "idioma",
+    "country" : "pais",
+    "city" : "cuidad",
+    "sort" : "ordenar",
+    "date" : "Fecha del curso",
+    "continue" : "duración",
+    "living" : "alojamiento",
+    "more_search" : "Mostrar más",
+    "living1" : "Familia de acogida",
+    "living2" : "Residencia",
+    "living3" : "apartamento",
+    "living4" : "apartamento de estudiantes",
+    "living5" : "sin alojamiente",
+    "week" : "semana",
+    "weeks" : "semanas",
+    "review" : "valoracion",
+    "reviews" : "valoraciones"
+  },
+  "languages" : {
+    "ru" : "Ruso",
+    "en" : "inglés",
+    "china" : "chino",
+    "de" : "alemán",
+    "fr" : "francés",
+    "sp" : "español"
+  },
+  "country" : {
+    "usa_c" : "Estados Unidos de América",
+    "eng_c" : "Reino Unido",
+    "sp_c" : "España",
+    "fr_c" : "Francia",
+    "de_c" : "Alemania"
+  },
+  "currency" : {
+    "ru_rub" : "Rublos",
+    "ua" : "Grivna",
+    "dollar_usa" : "Dólar estadounidense",
+    "euro" : "euro"
+  }
+}

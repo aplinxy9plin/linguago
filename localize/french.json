@@ -1,0 +1,49 @@
+{
+  "WalkThrough" : {
+    "title_1" : "COURS DE FRANÇAIS",
+    "title_2" : "DANS LE MONDE ENTIER",
+    "choose_lang_curr" : "Choisir la langue et la monnaie",
+    "choose_lang_coun" : "Choisir la langue et le pays",
+    "start_now" : "Commencer (maintenant)"
+  },
+  "school" : {
+    "language" : "Langue",
+    "country" : "Pays",
+    "city" : "Ville",
+    "sort" : "Classer",
+    "date" : "Date de début",
+    "continue" : "Durée",
+    "living" : "Hébergement",
+    "more_search" : "Recherche détaillé",
+    "living1" : "Famille d’accueil",
+    "living2" : "Residence étudiante",
+    "living3" : "Аppartement privé",
+    "living4" : "Appartement partagé",
+    "living5" : "Pas d’hébergement",
+    "week" : "semaine",
+    "weeks" : "semaines",
+    "review" : "témoignage",
+    "reviews" : "témoignages"
+  },
+  "languages" : {
+    "ru" : "Russe",
+    "en" : "Anglais",
+    "china" : "Chinois",
+    "de" : "Allemand",
+    "fr" : "Français",
+    "sp" : "Espagnol"
+  },
+  "country" : {
+    "usa_c" : "États-Unis",
+    "eng_c" : "Royaume-Uni",
+    "sp_c" : "Espagne",
+    "fr_c" : "Allemagne",
+    "de_c" : "France"
+  },
+  "currency" : {
+    "ru_rub" : "rouble russe ",
+    "ua" : "grivna",
+    "dollar_usa" : "dollar US",
+    "euro" : "euro"
+  }
+}
