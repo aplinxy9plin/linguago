@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,43 +31,48 @@
 <body onload="show_modal()">
   <button style="display: none" id="first_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
   <button style="display: none" id="callback_a" type="button" class="btn btn-info btn-lg" data-toggle="modal1" data-target="#callback_phone">Open Modal</button>
+  <?php
+    if(empty($_SESSION['subs']) && empty($_SESSION['login'])){
+      echo '<div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+             <div id="id-newsletter-signup-modal-contents">
+                <div class="modal-background" style="z-index:0"></div>
+                <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div>
+                <div class="row">
+                   <form action="#" class="form col-sm-6" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#id-newsletter-signup-modal-contents" id="form0" method="post" novalidate="novalidate">
+                      <div class="header-par">Подпишитесь на нашу рассылку, чтобы первыми узнавать о лучших предложениях школ и получать советы о планировании поездки!</div>
+                      <div class="form-block" style="margin-top:2em"><label class="bold">Адрес моей электронной почты</label> <input class="form-control" name="email_subs" data-val="true" data-val-required="" data-val-email=""></div>
+                      <div class="button-block" style="margin-top:1em"><button id="newsletter_submit" type="submit" class="btn btn-lg bold btn-success">Подписаться</button></div>
+                   </form>
+                   <div class="col-sm-5 col-sm-offset-1">
+                      <div class="media">
+                         <img class="sprites_landing/study.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                         <div class="media-body"><b>Узнайте, как выбрать правильную школу</b> в зависимости от ваших целей</div>
+                      </div>
+                      <div class="media">
+                         <img class="sprites_landing/world.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                         <div class="media-body"><b>Узнайте, нужна ли вам виза</b> и как ее получить</div>
+                      </div>
+                      <div class="media">
+                         <img class="sprites_landing/lock.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                         <div class="media-body"><b>Не волнуйтесь&nbsp;— адрес вашей электронной почты останется в безопасности.</b> Мы никогда не распространяем личные данные, и вы можете отказаться от рассылки в любой момент.</div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+
+        </div>
+      </div>';
+    }
+  ?>
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-         <div id="id-newsletter-signup-modal-contents">
-            <div class="modal-background" style="z-index:0"></div>
-            <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div>
-            <div class="row">
-               <form action="/ru/home/subscribetonewsletter/" class="form col-sm-6" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#id-newsletter-signup-modal-contents" id="form0" method="post" novalidate="novalidate">
-                  <div class="header-par">Подпишитесь на нашу рассылку, чтобы первыми узнавать о лучших предложениях школ и получать советы о планировании поездки!</div>
-                  <div class="form-block" style="margin-top:2em"><label class="bold">Адрес моей электронной почты</label> <input class="form-control" name="email" data-val="true" data-val-required="" data-val-email=""></div>
-                  <div class="button-block" style="margin-top:1em"><button id="newsletter_submit" type="submit" class="btn btn-lg bold btn-success">Подписаться</button></div>
-               </form>
-               <div class="col-sm-5 col-sm-offset-1">
-                  <div class="media">
-                     <img class="sprites_landing/study.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                     <div class="media-body"><b>Узнайте, как выбрать правильную школу</b> в зависимости от ваших целей</div>
-                  </div>
-                  <div class="media">
-                     <img class="sprites_landing/world.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                     <div class="media-body"><b>Узнайте, нужна ли вам виза</b> и как ее получить</div>
-                  </div>
-                  <div class="media">
-                     <img class="sprites_landing/lock.png pull-left media-object" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                     <div class="media-body"><b>Не волнуйтесь&nbsp;— адрес вашей электронной почты останется в безопасности.</b> Мы никогда не распространяем личные данные, и вы можете отказаться от рассылки в любой момент.</div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-    </div>
-
-    </div>
-  </div>
   <div class="modal fade" id="callback_phone" role="dialog">
     <div class="modal-dialog">
 
@@ -96,12 +104,25 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.php"><img src="images/3.png" width="200px"></a>
+                            <a class="navbar-brand" href="index.php"><h2>MyLingua</h2></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-menu"></span>
               </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
+                                    <?php
+                                      if(isset($_SESSION['login'])){
+                                        if($_SESSION['rule'] == 'school'){
+                                          echo '<li class="nav-item " style="background-color: #ff3a6d">
+                                              <a class="nav-link" href="school_profile">ЛИЧНЫЙ КАБИНЕТ</a>
+                                          </li><hr>';
+                                        }else{
+                                          echo '<li class="nav-item " style="background-color: #ff3a6d">
+                                              <a class="nav-link" href="profile">ЛИЧНЫЙ КАБИНЕТ</a>
+                                          </li><hr>';
+                                        }
+                                      }
+                                    ?>
                                     <li class="nav-item " style="background-color: #ff3a6d">
                                         <a class="nav-link" href="schools.php?sort=offline">КУРСЫ ОФФЛАЙН</a>
                                     </li><hr>
@@ -189,6 +210,11 @@
     <!--============================= FEATURED PLACES =============================-->
     <?php
       include('bd.php');
+      if(isset($_POST["email_subs"])){
+        $email_subs = $_POST['email_subs'];
+        $result2 = $mysqli->query("INSERT INTO subscription (email) VALUES('$email_subs')");
+        $_SESSION["subs"] = true;
+      }
       $result = $mysqli->query("SELECT * FROM schools");
       $images = "";
       $array = [];
@@ -277,13 +303,17 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="featured-btn-wrap">
-                        <a href="#" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
+            <?php
+              if(empty($_SESSION['login'])){
+                echo '<div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="featured-btn-wrap">
+                            <a href="login/reg.php" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>';
+              }
+            ?>
         </div>
     </section>
     <!--//END ADD LISTING -->
@@ -386,13 +416,24 @@
                   </div></center>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <?php
+              if(empty($_SESSION['login'])){
+                echo '<div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="featured-btn-wrap">
+                            <a href="login/reg.php" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
+                        </div>
+                    </div>
+                </div>';
+              }
+            ?>
+            <!-- <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="featured-btn-wrap">
-                        <a href="#" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
+                        <a href="login/reg.php" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--//END FEATURED PLACES -->
@@ -417,9 +458,9 @@
                   <div class="row">
                     <ul style="list-style: none; color: white">
                       <li><h6 style="color: #f8f8f8">Наши услуги</h6></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
+                      <li><a href="schools.php" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
+                      <li><a href="schools.php?sort=online" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
+                      <li><a href="teachers.php" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
                     </ul>
                   </div>
                 </div>
@@ -428,7 +469,11 @@
                     <ul style="list-style: none">
                       <li><a href="#" class="btn" style="background-color: #ff3a6d; color: #f8f8f8">Внести оплату по карте</a></li><br>
                       <li><a href="add_school.php" style="color: #f8f8f8; text-decoration: underline;">Зарегистрировать школу</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Войти</a></li>
+                      <?php
+                        if(empty($_SESSION['login'])){
+                          echo '<li><a href="login" style="color: #f8f8f8; text-decoration: underline;">Войти</a></li>';
+                        }
+                      ?>
                     </ul>
                   </div>
                 </div>

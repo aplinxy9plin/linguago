@@ -154,9 +154,9 @@
                     <div class="row">
                       <ul style="list-style: none; color: white">
                         <li><h6 style="color: #f8f8f8">Наши услуги</h6></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
+                        <li><a href="schools.php" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
+                        <li><a href="schools.php?sort=online" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
+                        <li><a href="teachers.php" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
                         <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Консультации по оформлению виз</a></li>
                       </ul>
                     </div>

@@ -284,17 +284,12 @@
                   $images = $array["image"];
                   $image_array = explode(',', $images);
                   foreach ($image_array as $key) {
-                    // echo '<div class="swiper-slide">
-                    //     <a href="'.$key.'" class="grid image-link">
-                    //         <img src="'.$key.'" style="width: 672px; height: 414px;" class="img-fluid" alt="#">
-                    //     </a>
-                    // </div>';
+                    echo '<div class="swiper-slide">
+                        <a href="'.$key.'" class="grid image-link">
+                            <img src="'.$key.'" style="width: 672px; height: 414px;" class="img-fluid" alt="#">
+                        </a>
+                    </div>';
                   }
-                  echo '<div id="my_image" class="swiper-slide">
-                      <a href="sc/1.jpg" class="grid image-link">
-                          <img src="sc/1.jpg" width="100%" class="img-fluid" alt="#">
-                      </a>
-                  </div>';
                   echo "<script>function myMap() {
                       var maplat = $('#map').data('lat');
                       var maplon = $('#map').data('lon');
@@ -578,9 +573,9 @@
                   <div class="row">
                     <ul style="list-style: none; color: white">
                       <li><h6 style="color: #f8f8f8">Наши услуги</h6></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
+                      <li><a href="schools.php" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
+                      <li><a href="schools.php?sort=online" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
+                      <li><a href="teachers.php" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
                     </ul>
                   </div>
                 </div>
@@ -626,6 +621,22 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/modal.js"></script>
     <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
         if ($('.image-link').length) {
             $('.image-link').magnificPopup({
                 type: 'image',
@@ -642,7 +653,6 @@
                 }
             });
         }
-        $('#my_image').css("width: 100%")
     </script>
 </body>
 

@@ -32,15 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<?php
-					if(isset($_POST["name"])){
-						if (empty($_POST["email"]) or empty($_POST["pass"]) or empty($_POST["repeat_pass"]) or empty($_POST["name"])) //åñëè ïîëüçîâàòåëü íå ââåë ëîãèí èëè ïàðîëü, òî âûäàåì îøèáêó è îñòàíàâëèâàåì ñêðèïò
-						{
-						echo "document.write('empty_fields')";
-						}
-					}
-				?>
-				<form class="login100-form validate-form" action="#" method="POST">
+				<form class="login100-form validate-form" action="regFiles/save_user.php" method="post">
 					<span class="login100-form-title p-b-43">
 						Register to continue
 					</span>
@@ -59,7 +51,7 @@
 
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -72,7 +64,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Register
 						</button>
 					</div>

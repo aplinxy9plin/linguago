@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST['email'])) { $login = $_POST['email']; if ($login == '') { unset($login);} } //������� ��������� ������������� ����� � ���������� $login, ���� �� ������, �� ���������� ����������
 if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
-if (isset($_POST['mobile'])) { $mobile=$_POST['mobile']; if ($mobile =='') { unset($mobile);} }
+if (isset($_POST['name'])) { $name=$_POST['name']; if ($name =='') { unset($name);} }
 //������� ��������� ������������� ������ � ���������� $password, ���� �� ������, �� ���������� ����������
 
-if (empty($login) or empty($password) or empty($mobile)) //���� ������������ �� ���� ����� ��� ������, �� ������ ������ � ������������� ������
+if (empty($login) or empty($password) or empty($name)) //���� ������������ �� ���� ����� ��� ������, �� ������ ������ � ������������� ������
 {
 exit ("XYINYA!");
 }
@@ -15,31 +15,31 @@ $login = htmlspecialchars($login);
 $password = stripslashes($password);
 $password = htmlspecialchars($password);
 
-$mobile = stripslashes($mobile);
-$mobile = htmlspecialchars($mobile);
+$name = stripslashes($name);
+$name = htmlspecialchars($name);
 
 //������� ������ �������
 $login = trim($login);
 $password = trim($password);
-$mobile = trim($mobile);
+$name = trim($name);
 
 // ������������ � ����
 include ("bd.php");// ���� bd.php ������ ���� � ��� �� �����, ��� � ��� ���������, ���� ��� �� ���, �� ������ �������� ����
 
 // �������� �� ������������� ������������ � ����� �� �������
-$result = $mysqli->query("SELECT id FROM users WHERE mail='$login'");
+$result = $mysqli->query("SELECT id FROM users WHERE email='$login'");
 $myrow = mysqli_fetch_array($result);
 if (!empty($myrow['id'])) {
-header('Location: ../login.php?req=exist');
+header('Location: ../reg.php?req=exist');
 exit;
 }
 
 // ���� ������ ���, �� ��������� ������
-$result2 = $mysqli->query("INSERT INTO users (mail,password) VALUES('$login','$password','$mobile')");
+$result2 = $mysqli->query("INSERT INTO users (email,password, name) VALUES('$login','$password','$name')");
 // ���������, ���� �� ������
 if ($result2=='TRUE')
 {
-header('Location: ../login.php?req=complete');
+header('Location: ../index.php?req=complete');
 echo "Good</a>";
 }
 

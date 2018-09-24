@@ -1,7 +1,15 @@
+<?php session_start();
+	if(isset($_SESSION['login'])){
+		if($_SESSION['rule'] == 'school'){
+			header('Location: ../login');
+		}
+		header('Location: ../index.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V18</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -28,11 +36,10 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
-
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="#" method="POST">
+				<form class="login100-form validate-form" action="regFiles/testreg.php" method="POST">
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
@@ -46,7 +53,7 @@
 
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -68,7 +75,7 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Login
 						</button>
 					</div>

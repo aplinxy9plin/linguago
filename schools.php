@@ -14,7 +14,7 @@
     <!-- Page Title -->
     <title>Mylingua</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <!-- Simple line Icon -->
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/set1.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
 
 <body onload="load_mark(); leng = document.getElementById('country').length; changeContryOnLoad()">
@@ -91,7 +93,6 @@
                               <option>Англия (2)</option>
                             </select>
                           </div>
-                          <input id="datepicker" width="276" />
                           <div style="display: inline-block; padding-left: 20px;" >
                             <h5 style="font-size: 1.1em">Город</h5>
                             <select name="city" id="city" class="btn-group1" style="width: 150px; height: 40px;">
@@ -108,6 +109,61 @@
                               <option>Сначала дорогие</option>
                             </select>
                           </div>
+                          <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+                          <div class="container">
+	<div class="row">
+    <div class="form-group">
+        <div class="col-xs-5 date">
+            <div class="input-group input-append date" id="datePicker">
+                <input type="text" class="form-control" name="date" />
+                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+    </div>
+
+<script>
+$(document).ready(function() {
+    $('#datePicker')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#eventForm').formValidation('revalidateField', 'date');
+        });
+
+    $('#eventForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required'
+                    }
+                }
+            },
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date is required'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY',
+                        message: 'The date is not a valid'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+	</div>
+</div>
                         </div>
                         <div style="padding-top: 20px; padding-bottom: 10px" class="col-sm-12">
                           <div class="form-inline" style="margin-top:0.5em; display: inline-block;">
@@ -465,9 +521,9 @@
                   <div class="row">
                     <ul style="list-style: none; color: white">
                       <li><h6 style="color: #f8f8f8">Наши услуги</h6></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
-                      <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
+                      <li><a href="schools.php" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
+                      <li><a href="schools.php?sort=online" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
+                      <li><a href="teachers.php" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
                     </ul>
                   </div>
                 </div>
@@ -700,14 +756,51 @@
         });
     </script>
     <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
+    $(document).ready(function() {
+$('#datePicker')
+    .datepicker({
+        format: 'mm/dd/yyyy'
+    })
+    .on('changeDate', function(e) {
+        // Revalidate the date field
+        $('#eventForm').formValidation('revalidateField', 'date');
+    });
+
+$('#eventForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        name: {
+            validators: {
+                notEmpty: {
+                    message: 'The name is required'
+                }
+            }
+        },
+        date: {
+            validators: {
+                notEmpty: {
+                    message: 'The date is required'
+                },
+                date: {
+                    format: 'MM/DD/YYYY',
+                    message: 'The date is not a valid'
+                }
+            }
+        }
+    }
+});
+});
     </script>
     <script>
         // Want to customize colors? go to snazzymaps.com
 
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <!-- Map JS (Please change the API key below. Read documentation for more info) -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=myMap&key=AIzaSyCy5byxzoigmevVSNOlQe0HSabmpxOsNOU&sensor=false"></script>
 </body>

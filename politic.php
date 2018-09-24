@@ -93,49 +93,23 @@
     right: 0;
   }
     </style>
+
     <section>
         <div class="container">
+            <div class="row">
                 <div class="col-md-12">
+                  <div class="offer-box">
                     <div class="row">
-                      <div class="col-sm-7" style="border-right: 1px solid #ddd; top: 10px; padding-right: 100px">
-                          <h1>Контакты</h1>
-                          <h3>Телефоны для связи со службой клиентской поддержки</h3>
-                          Россия: 8 (965) 9883192
-                          <h4>Или напиши нам на почту</h4>
-                          <a href="#">info@mylingua.online</a>— общие вопросы, служба поддержки
-                      </div>
-                      <div class="col-sm-5" style="padding-top: 200px">
-                        <form>
-                          <p>Вы можете написать ваш вопрос здесь, и мы оперативно ответим на него.</p><br>
-                          <div class="form-group row">
-                            <label for="example-text-input" class="col-2 col-form-label">Ваше имя</label>
-                            <div class="col-10">
-                              <input class="form-control" type="text" id="example-text-input">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="example-search-input" class="col-2 col-form-label">Ваш email</label>
-                            <div class="col-10">
-                              <input class="form-control" type="search" id="example-search-input">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="example-search-input" class="col-2 col-form-label">Ваш телефон</label>
-                            <div class="col-10">
-                              <input class="form-control" type="search" id="example-search-input">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleTextarea">Ваш вопрос</label>
-                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                          </div>
-                          <button class="btn btn-lg btn-success">Отправить</button>
-                        </form>
-                      </div>
+                        <div class="col-md-12" style="border-right: 1px solid #ddd; padding-right: 3em; padding-top: 1em; color: black">
+                          <iframe style="width: 100%; height: 100%; position: fixed; border: none;" src="doc1.html">
                     </div>
+                  </div>
                 </div>
+            </div>
         </div>
-    </section><br><br>
+    </section>
+
+    <!--//END DETAIL -->
     <!--============================= FOOTER =============================-->
     <footer class="main-block dark-bg">
         <div class="container">
@@ -188,9 +162,6 @@
             </div>
         </div>
     </footer>
-    <!--//END FOOTER -->
-    <!--//END DETAIL -->
-
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>

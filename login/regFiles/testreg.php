@@ -26,26 +26,35 @@ include ("bd.php");// ôàéë bd.php äîëæåí áûòü â òîé æå ïà�
 
 
 
-$result = $mysqli->query("SELECT * FROM users WHERE mail='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
+$result = $mysqli->query("SELECT * FROM users WHERE email='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
 $myrow = mysqli_fetch_array($result);
 if (empty($myrow['password']))
 {
-header('Location: ../login.php?req=empty_password');
-//åñëè ïîëüçîâàòåëÿ ñ ââåäåííûì ëîãèíîì íå ñóùåñòâóåò
-exit ("bad password");
+  header('Location: ../index.php?req=empty_password');
+  //åñëè ïîëüçîâàòåëÿ ñ ââåäåííûì ëîãèíîì íå ñóùåñòâóåò
+  exit ("bad password");
 }
 else {
+  if($myrow['rule'] == 'school'){
+    $_SESSION['rule'] = "school";
+    header('Location: ../index.php?req=school');
+    //åñëè ïîëüçîâàòåëÿ ñ ââåäåííûì ëîãèíîì íå ñóùåñòâóåò
+  }else{
+    $_SESSION['rule'] = 'user';
+    header('Location: ../index.php?req=good');
+    //åñëè ïîëüçîâàòåëÿ ñ ââåäåííûì ëîãèíîì íå ñóùåñòâóåò
+  }
 //åñëè ñóùåñòâóåò, òî ñâåðÿåì ïàðîëè
           if ($myrow['password']==$password) {
           //åñëè ïàðîëè ñîâïàäàþò, òî çàïóñêàåì ïîëüçîâàòåëþ ñåññèþ! Ìîæåòå åãî ïîçäðàâèòü, îí âîøåë!
-          $_SESSION['login']=$myrow['mail'];
+          $_SESSION['login']=$myrow['email'];
           $_SESSION['id']=$myrow['id'];//ýòè äàííûå î÷åíü ÷àñòî èñïîëüçóþòñÿ, âîò èõ è áóäåò "íîñèòü ñ ñîáîé" âîøåäøèé ïîëüçîâàòåëü
-          header('Location: ../dashboard.php');
+          header('Location: ../index.php?req=good');
           exit;
           }
 
        else {
-        header('Location: ../login.php?req=bad_password');
+        header('Location: ../index.php?req=bad_password');
        //åñëè ïàðîëè íå ñîøëèñü
        exit ("All bad.");
 	   }

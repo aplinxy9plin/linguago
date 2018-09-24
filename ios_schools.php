@@ -210,7 +210,7 @@
                             $image = explode(",", $key["image"]);
                             echo '<div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                                 <div class="featured-place-wrap">
-                                    <a href="detail.php?name='.$key["name"].'&id='.$key["id"].'">
+                                    <a href="ios_detail.php?name='.$key["name"].'&id='.$key["id"].'">
                                         <img src="'.$image[0].'" alt="#">
                                         <span class="featured-rating-green ">'.$key["reviews"].'</span>
                                         <div class="featured-title-box">
@@ -298,7 +298,7 @@
                               $image = explode(",", $key["image"]);
                               echo '<div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                                   <div class="featured-place-wrap">
-                                      <a href="detail.php?name='.$key["name"].'&id='.$key["id"].'">
+                                      <a href="ios_detail.php?name='.$key["name"].'&id='.$key["id"].'">
                                           <img src="'.$image[0].'" alt="#">
                                           <span class="featured-rating-green ">'.$key["reviews"].'</span>
                                           <div class="featured-title-box">

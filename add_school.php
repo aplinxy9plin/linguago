@@ -91,9 +91,6 @@
                                 You will be able to add more schools or school locations later.
                                 Just fill the form with the details of one of them for now.
                             </p>
-                            <div class="highlight" style="text-align: center; padding: 1em; font-weight: bold;">
-                                <a href="/ru/promote_school/youtube/">See how you can grow with LinguaTrip</a>
-                            </div>
                             <p>
                             </p><h4>About Mylingua</h4>
                                 <ul>
@@ -469,9 +466,9 @@
                     <div class="row">
                       <ul style="list-style: none; color: white">
                         <li><h6 style="color: #f8f8f8">Наши услуги</h6></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
-                        <li><a href="#" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
+                        <li><a href="schools.php" style="color: #f8f8f8; text-decoration: underline;">Языковые курсы по всему миру</a></li>
+                        <li><a href="schools.php?sort=online" style="color: #f8f8f8; text-decoration: underline;">Курсы иностранных языков онлайн</a></li>
+                        <li><a href="teachers.php" style="color: #f8f8f8; text-decoration: underline;">Уроки по Skype</a></li>
                       </ul>
                     </div>
                   </div>
