@@ -195,19 +195,19 @@
                                       <button type="submit" class="btn btn-primary btn-lg"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
-                                <div class="slider-link col-md-12">
-                                    <!--<h5>Популярные направления:</h5><a href="#">Лондон</a><span>•</span><a href="#">Дублин</a><span>•</span><a href="#">Нью-Йорк</a><span>•</span><a href="#">Мальта</a>-->
-                                    <div class="col-md-3" style="display: inline">
-                                      <h5 style="color: white; display: inline">2302 школ</h5>
-                                    </div>
-                                    <span>•</span>
-                                    <div class="col-md-3" style="display: inline">
-                                      <h5 style="color: white; display: inline">200 городов</h5>
-                                    </div>
-                                    <span>•</span>
-                                    <div style="display: inline">
-                                      <h5 style="color: white; display: inline">122200 счастливых учеников</h5>
-                                    </div>
+                                <div class="row counter mt-5">
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                                    <span class="counter-description">школ</span>
+                                  </div>
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="120" data-speed="2000" data-refresh-interval="100">120</span>
+                                    <span class="counter-description">городов</span>
+                                  </div>
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                                    <span class="counter-description">счастливых учеников</span>
+                                  </div>
                                 </div>
                             </div>
                         </div>

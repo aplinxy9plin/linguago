@@ -224,6 +224,36 @@ select:focus {
   width: 100%;
 }
 
+.counter .counter-number {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 65px;
+  color: #fff;
+  // font-family: "Poppins";
+  line-height: 70px;
+}
+
+.counter .counter-description {
+  width: 100%;
+  line-height: 24px;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  // font-family: "Poppins";
+  font-weight: 700;
+}
+
+.counter .col-sm-4 {
+  border-right: 1px solid #fff;
+}
+
+.counter .col-sm-4:last-child {
+  border-right: none;
+}
+
 .btn-group1 {
   -webkit-box-shadow: 0 3px 5px #333;
 	-moz-box-shadow: 0 3px 5px #333;
