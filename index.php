@@ -170,18 +170,29 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
                                 <form class="form-wrap mt-4" action="schools.php" method="GET">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-
-                                        <select name="language" id="language" class="btn-group1" onchange="selectChange()">
-                                          <option>Английский</option>
-                                          <option>Немецкий</option>
-                                          <option>Испанский</option>
-                                        </select>
-                                        <select name="country" id="country" class="btn-group2">
-                                          <option>США (5)</option>
-                                          <option>Англия (2)</option>
-                                        </select>
-                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
+                                    <div class="btn-group group-search" role="group" aria-label="Выбор">
+                                      <div class="dropdown btn-group" role="group" aria-label="Выбор языка">
+                                        <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Выберите язык
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="language">
+                                          <a class="dropdown-item" href="#">Английский</a>
+                                          <a class="dropdown-item" href="#">Немецкий</a>
+                                          <a class="dropdown-item" href="#">Испанский</a>
+                                        </div>
+                                        <input type="hidden" class="input-hidden" name="language" />
+                                      </div>
+                                      <div class="dropdown btn-group" role="group" aria-label="Выбор страны">
+                                        <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Выберите страну
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="country">
+                                          <a class="dropdown-item" href="#">США (5)</a>
+                                          <a class="dropdown-item" href="#">Англия (2)</a>
+                                        </div>
+                                        <input type="hidden" class="input-hidden" name="country" />
+                                      </div>
+                                      <button type="submit" class="btn btn-primary btn-lg"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
                                 <div class="slider-link col-md-12">
@@ -505,12 +516,12 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-    function show_modal(){
-      document.getElementById('first_modal').click()
-    }
-    function callback_b(){
-      document.getElementById('callback_a').click()
-    }
+      function show_modal(){
+        document.getElementById('first_modal').click()
+      }
+      function callback_b(){
+        document.getElementById('callback_a').click()
+      }
       function selectChange(){
         var lang = document.getElementById('language').value
         switch (lang) {
@@ -542,19 +553,25 @@
 
         }
       }
-        $(window).scroll(function() {
-            // 100 = The point you would like to fade the nav in.
+      $(window).scroll(function() {
+          // 100 = The point you would like to fade the nav in.
 
-            if ($(window).scrollTop() > 100) {
+          if ($(window).scrollTop() > 100) {
 
-                $('.fixed').addClass('is-sticky');
+              $('.fixed').addClass('is-sticky');
 
-            } else {
+          } else {
 
-                $('.fixed').removeClass('is-sticky');
+              $('.fixed').removeClass('is-sticky');
 
-            };
-        });
+          };
+      });
+      // dropdown click
+      $(".dropdown .dropdown-menu .dropdown-item").click(function(){
+        var selText = $(this).text();
+        $(this).parents('.dropdown').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+        $(this).parents('.dropdown').find('.input-hidden').val(selText);
+      });
     </script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?158"></script>
     <script>

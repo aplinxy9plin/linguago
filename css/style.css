@@ -201,6 +201,29 @@ select:focus {
   outline: none;
 }
 
+.group-search {
+  height: 70px;
+}
+
+.btn-primary {
+  background: #ff3a6d;
+  border-color: #ff3a6d;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: #E91E63;
+  border-color: #E91E63;
+  color: #fff;
+}
+
+.dropdown .dropdown-toggle {
+  width: 100%;
+}
+
+.dropdown .dropdown-menu.show {
+  width: 100%;
+}
+
 .btn-group1 {
   -webkit-box-shadow: 0 3px 5px #333;
 	-moz-box-shadow: 0 3px 5px #333;
