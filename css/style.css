@@ -202,7 +202,12 @@ select:focus {
 }
 
 .group-search {
+  display:flex;
   height: 70px;
+}
+
+.group-search > .btn-group {
+  margin-right: 5px;
 }
 
 .btn-primary {
