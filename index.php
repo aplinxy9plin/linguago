@@ -26,9 +26,11 @@
     <link rel="stylesheet" href="css/set1.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- новые стили -->
+    <link rel="stylesheet" href="css/styles.v2.0.css">
 </head>
 
-<body onload="show_modal()">
+<body>
   <button style="display: none" id="first_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
   <button style="display: none" id="callback_a" type="button" class="btn btn-info btn-lg" data-toggle="modal1" data-target="#callback_phone">Open Modal</button>
   <?php
@@ -266,67 +268,12 @@
       }
       //$result = $mysqli->query("SELECT * FROM schools WHERE language = ")
     ?>
-    <section class="main-block light-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="styled-heading">
-                      <h1 style="font-size: 3.5em; color: black">ПОМОЖЕМ ВЫБРАТЬ ШКОЛУ МЕЧТЫ</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/school.svg" width="190px">
-                          <h6 style="font-size: 2em">Запись в школу и решение любых вопросов</h6>
-                      </div>
-                  </a>
-                </div>
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/visa.svg" width="190px">
-                          <h6 style="font-size: 2em">Помощь в оформление <br>визы</h6>
-                      </div>
-                  </a>
-                </div>
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/operator.svg" width="190px">
-                          <h6 style="font-size: 2em">Консультация по выбору <br>школу</h6>
-                      </div>
-                  </a>
-                </div>
-            </div>
-    </section>
-    <!--============================= ADD LISTING =============================-->
-    <section class="main-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="add-listing-wrap">
-                        <h2>КАК БРОНИРОВАТЬ КУРС НА Mylingua</h2>
-                        <center><img src="images/plan.png" width="700px"></center>
-                        <!--<p>Начни учиться за границей прямо сейчас</p>-->
-                    </div>
-                </div>
-            </div>
-            <?php
-              if(empty($_SESSION['login'])){
-                echo '<div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <div class="featured-btn-wrap">
-                            <a href="login/reg.php" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
-                        </div>
-                    </div>
-                </div>';
-              }
-            ?>
-        </div>
-    </section>
+
+    <!-- секция с тремя плашками -->
+    <?include 'include/help.php';?>
+    <!-- секция с шагами -->
+    <?include 'include/steps.php';?>
+    
     <!--//END ADD LISTING -->
     <section class="main-block light-bg">
         <div class="container">
