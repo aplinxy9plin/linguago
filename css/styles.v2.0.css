@@ -1,0 +1,64 @@
+.center {
+    text-align: center;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+}
+
+.section-features {
+    background-color: #ffffff;
+    padding: 55px 0;
+}
+
+.section-steps {
+    background-color: #ffffff;
+    padding: 55px 0;
+}
+
+.section__title {
+    color: #272727;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin-bottom: 70px;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.title-h2 {
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.features__item {
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+}
+
+.features__pic {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.features__pic > img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+
+.features__pic-big > img {
+    max-width: 600px;
+}
+
+.features__link {
+    font-size: 18px;
+    font-weight: 300;
+}

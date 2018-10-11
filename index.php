@@ -26,9 +26,11 @@
     <link rel="stylesheet" href="css/set1.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- новые стили -->
+    <link rel="stylesheet" href="css/styles.v2.0.css">
 </head>
 
-<body onload="show_modal()">
+<body>
   <button style="display: none" id="first_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
   <button style="display: none" id="callback_a" type="button" class="btn btn-info btn-lg" data-toggle="modal1" data-target="#callback_phone">Open Modal</button>
   <?php
@@ -170,33 +172,44 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
                                 <form class="form-wrap mt-4" action="schools.php" method="GET">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-
-                                        <select name="language" id="language" class="btn-group1" onchange="selectChange()">
-                                          <option>Английский</option>
-                                          <option>Немецкий</option>
-                                          <option>Испанский</option>
-                                        </select>
-                                        <select name="country" id="country" class="btn-group2">
-                                          <option>США (5)</option>
-                                          <option>Англия (2)</option>
-                                        </select>
-                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
+                                    <div class="group-search" role="group" aria-label="Выбор">
+                                      <div class="dropdown btn-group" role="group" aria-label="Выбор языка">
+                                        <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Выберите язык
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="language">
+                                          <a class="dropdown-item" href="#">Английский</a>
+                                          <a class="dropdown-item" href="#">Немецкий</a>
+                                          <a class="dropdown-item" href="#">Испанский</a>
+                                        </div>
+                                        <input type="hidden" class="input-hidden" name="language" />
+                                      </div>
+                                      <div class="dropdown btn-group" role="group" aria-label="Выбор страны">
+                                        <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Выберите страну
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="country">
+                                          <a class="dropdown-item" href="#">США (5)</a>
+                                          <a class="dropdown-item" href="#">Англия (2)</a>
+                                        </div>
+                                        <input type="hidden" class="input-hidden" name="country" />
+                                      </div>
+                                      <button type="submit" class="btn btn-primary btn-lg"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
-                                <div class="slider-link col-md-12">
-                                    <!--<h5>Популярные направления:</h5><a href="#">Лондон</a><span>•</span><a href="#">Дублин</a><span>•</span><a href="#">Нью-Йорк</a><span>•</span><a href="#">Мальта</a>-->
-                                    <div class="col-md-3" style="display: inline">
-                                      <h5 style="color: white; display: inline">2302 школ</h5>
-                                    </div>
-                                    <span>•</span>
-                                    <div class="col-md-3" style="display: inline">
-                                      <h5 style="color: white; display: inline">200 городов</h5>
-                                    </div>
-                                    <span>•</span>
-                                    <div style="display: inline">
-                                      <h5 style="color: white; display: inline">122200 счастливых учеников</h5>
-                                    </div>
+                                <div class="row counter mt-5">
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                                    <span class="counter-description">школ</span>
+                                  </div>
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="120" data-speed="2000" data-refresh-interval="100">120</span>
+                                    <span class="counter-description">городов</span>
+                                  </div>
+                                  <div class="col-sm-4 col-xs-12 widget_counter">
+                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                                    <span class="counter-description">счастливых учеников</span>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -255,67 +268,12 @@
       }
       //$result = $mysqli->query("SELECT * FROM schools WHERE language = ")
     ?>
-    <section class="main-block light-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="styled-heading">
-                      <h1 style="font-size: 3.5em; color: black">ПОМОЖЕМ ВЫБРАТЬ ШКОЛУ МЕЧТЫ</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/school.svg" width="190px">
-                          <h6 style="font-size: 2em">Запись в школу и решение любых вопросов</h6>
-                      </div>
-                  </a>
-                </div>
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/visa.svg" width="190px">
-                          <h6 style="font-size: 2em">Помощь в оформление <br>визы</h6>
-                      </div>
-                  </a>
-                </div>
-                <div class="col-md-4 category-responsive">
-                  <a class="category-wrap">
-                      <div class="category-block">
-                          <img src="images/operator.svg" width="190px">
-                          <h6 style="font-size: 2em">Консультация по выбору <br>школу</h6>
-                      </div>
-                  </a>
-                </div>
-            </div>
-    </section>
-    <!--============================= ADD LISTING =============================-->
-    <section class="main-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="add-listing-wrap">
-                        <h2>КАК БРОНИРОВАТЬ КУРС НА Mylingua</h2>
-                        <center><img src="images/plan.png" width="700px"></center>
-                        <!--<p>Начни учиться за границей прямо сейчас</p>-->
-                    </div>
-                </div>
-            </div>
-            <?php
-              if(empty($_SESSION['login'])){
-                echo '<div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <div class="featured-btn-wrap">
-                            <a href="login/reg.php" class="btn btn-danger">НАЧАТЬ СЕЙЧАС</a>
-                        </div>
-                    </div>
-                </div>';
-              }
-            ?>
-        </div>
-    </section>
+
+    <!-- секция с тремя плашками -->
+    <?include 'include/help.php';?>
+    <!-- секция с шагами -->
+    <?include 'include/steps.php';?>
+    
     <!--//END ADD LISTING -->
     <section class="main-block light-bg">
         <div class="container">
@@ -505,12 +463,12 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-    function show_modal(){
-      document.getElementById('first_modal').click()
-    }
-    function callback_b(){
-      document.getElementById('callback_a').click()
-    }
+      function show_modal(){
+        document.getElementById('first_modal').click()
+      }
+      function callback_b(){
+        document.getElementById('callback_a').click()
+      }
       function selectChange(){
         var lang = document.getElementById('language').value
         switch (lang) {
@@ -542,19 +500,25 @@
 
         }
       }
-        $(window).scroll(function() {
-            // 100 = The point you would like to fade the nav in.
+      $(window).scroll(function() {
+          // 100 = The point you would like to fade the nav in.
 
-            if ($(window).scrollTop() > 100) {
+          if ($(window).scrollTop() > 100) {
 
-                $('.fixed').addClass('is-sticky');
+              $('.fixed').addClass('is-sticky');
 
-            } else {
+          } else {
 
-                $('.fixed').removeClass('is-sticky');
+              $('.fixed').removeClass('is-sticky');
 
-            };
-        });
+          };
+      });
+      // dropdown click
+      $(".dropdown .dropdown-menu .dropdown-item").click(function(){
+        var selText = $(this).text();
+        $(this).parents('.dropdown').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+        $(this).parents('.dropdown').find('.input-hidden').val(selText);
+      });
     </script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?158"></script>
     <script>
