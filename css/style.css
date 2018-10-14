@@ -221,6 +221,10 @@ select:focus {
   color: #fff;
 }
 
+.dropdown {
+  min-width: 235px;
+}
+
 .dropdown .dropdown-toggle {
   width: 100%;
 }
