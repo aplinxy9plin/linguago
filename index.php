@@ -104,23 +104,23 @@
     <!-- SLIDER -->
     <section class="slider d-flex align-items-center">
         <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
-        <div class="container">
-            <div class="row d-flex justify-content-center">
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center w-100 mt-5">
                 <div class="col-md-12">
                     <div class="slider-title_box">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
-                                    <h1 style="font-size: 4em">ЯЗЫКОВЫЕ КУРСЫ ПО ВСЕМУ МИРУ</h1>
-                                    <h5 style="font-size: 2em">ПОЗНАВАЙ МИР ВМЕСТЕ С Mylingua</h5>
+                                    <h1 class="title">ЯЗЫКОВЫЕ КУРСЫ ПО ВСЕМУ МИРУ</h1>
+                                    <h5 class="h5">ПОЗНАВАЙ МИР ВМЕСТЕ С Mylingua</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="row d-flex justify-content-center">
+                        <div class="d-flex justify-content-center w-100">
                             <div class="col-md-10">
-                                <form class="form-wrap mt-4" action="schools.php" method="GET">
-                                    <div class="group-search" role="group" aria-label="Выбор">
-                                      <div class="dropdown btn-group" role="group" aria-label="Выбор языка">
+                                <form class="form-wrap" action="schools.php" method="GET">
+                                    <div class="form-row align-items-center justify-content-center" role="group" aria-label="Выбор">
+                                      <div class="dropdown col-auto my-2" role="group" aria-label="Выбор языка">
                                         <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Выберите язык
                                         </button>
@@ -131,7 +131,7 @@
                                         </div>
                                         <input type="hidden" class="input-hidden" name="language" />
                                       </div>
-                                      <div class="dropdown btn-group" role="group" aria-label="Выбор страны">
+                                      <div class="dropdown col-auto my-2" role="group" aria-label="Выбор страны">
                                         <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Выберите страну
                                         </button>
@@ -141,24 +141,26 @@
                                         </div>
                                         <input type="hidden" class="input-hidden" name="country" />
                                       </div>
-                                      <button type="submit" class="btn btn-primary btn-lg"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
+                                      <div class="col-auto my-2">
+                                        <button type="submit" class="btn btn-primary btn-lg"><span class="icon-magnifier search-icon"></span>НАЙТИ ШКОЛЫ<i class="pe-7s-angle-right"></i></button>
+                                      </div>
                                     </div>
                                 </form>
-                                <div class="row counter mt-5">
-                                  <div class="col-sm-4 col-xs-12 widget_counter">
-                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
-                                    <span class="counter-description">школ</span>
-                                  </div>
-                                  <div class="col-sm-4 col-xs-12 widget_counter">
-                                    <span class="counter-number" data-from="1" data-to="120" data-speed="2000" data-refresh-interval="100">120</span>
-                                    <span class="counter-description">городов</span>
-                                  </div>
-                                  <div class="col-sm-4 col-xs-12 widget_counter">
-                                    <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
-                                    <span class="counter-description">счастливых учеников</span>
-                                  </div>
-                                </div>
                             </div>
+                        </div>
+                        <div class="row counter my-5">
+                          <div class="col-sm-4 col-xs-12 widget_counter">
+                            <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                            <span class="counter-description">школ</span>
+                          </div>
+                          <div class="col-sm-4 col-xs-12 widget_counter">
+                            <span class="counter-number" data-from="1" data-to="120" data-speed="2000" data-refresh-interval="100">120</span>
+                            <span class="counter-description">городов</span>
+                          </div>
+                          <div class="col-sm-4 col-xs-12 widget_counter">
+                            <span class="counter-number" data-from="1" data-to="260" data-speed="2000" data-refresh-interval="100">260</span>
+                            <span class="counter-description">счастливых учеников</span>
+                          </div>
                         </div>
                     </div>
                 </div>
