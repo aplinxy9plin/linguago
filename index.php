@@ -119,7 +119,7 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
                                 <form class="form-wrap mt-4" action="schools.php" method="GET">
-                                    <div class="btn-group group-search" role="group" aria-label="Выбор">
+                                    <div class="group-search" role="group" aria-label="Выбор">
                                       <div class="dropdown btn-group" role="group" aria-label="Выбор языка">
                                         <button class="btn btn-primary-outline btn-lg dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Выберите язык
