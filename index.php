@@ -100,60 +100,7 @@
   </div>
   <!-- End Modal -->
     <!--============================= HEADER =============================-->
-    <div class="nav-menu">
-        <div class="bg transition">
-            <div class="container-fluid fixed">
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.php"><h2>MyLingua</h2></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-menu"></span>
-              </button>
-                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                    <?php
-                                      if(isset($_SESSION['login'])){
-                                        if($_SESSION['rule'] == 'school'){
-                                          echo '<li class="nav-item " style="background-color: #ff3a6d">
-                                              <a class="nav-link" href="school_profile">ЛИЧНЫЙ КАБИНЕТ</a>
-                                          </li><hr>';
-                                        }else{
-                                          echo '<li class="nav-item " style="background-color: #ff3a6d">
-                                              <a class="nav-link" href="profile">ЛИЧНЫЙ КАБИНЕТ</a>
-                                          </li><hr>';
-                                        }
-                                      }
-                                    ?>
-                                    <li class="nav-item " style="background-color: #ff3a6d">
-                                        <a class="nav-link" href="schools.php?sort=offline">КУРСЫ ОФФЛАЙН</a>
-                                    </li><hr>
-                                    <li class="nav-item " style="background-color: #ff3a6d">
-                                        <a class="nav-link" href="schools.php?sort=online">КУРСЫ ОНЛАЙН</a>
-                                    </li><hr>
-                                    <li class="nav-item " style="background-color: #ff3a6d">
-                                        <a class="nav-link" href="teachers.php">УРОКИ ПО Skype</a>
-                                    </li><hr>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">8-913-109-26-84</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="javascript:callback_b()" class="nav-link" data-toggle="modal" data-target="#callback_phone" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Заказать обратный звонок</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Р</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RU</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?include 'include/header.php';?>
     <!-- SLIDER -->
     <section class="slider d-flex align-items-center">
         <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
@@ -505,11 +452,11 @@
 
           if ($(window).scrollTop() > 100) {
 
-              $('.fixed').addClass('is-sticky');
+              $('.header').addClass('header-fixed');
 
           } else {
 
-              $('.fixed').removeClass('is-sticky');
+              $('.header').removeClass('header-fixed');
 
           };
       });
