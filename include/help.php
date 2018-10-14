@@ -1,4 +1,4 @@
-<section class="section section-features">
+<section class="main-block light-bg">
 	<div class="container">
 		<div class="section__title">
 			<h2 class="title title-h2 center">Поможем выбрать школу мечты</h2>
