@@ -23,7 +23,7 @@
 				<a href="tel:+79131092684" class="phone">8 913 109-26-84</a>
 			</div>
 			<div class="header__item header__lang">
-				<a href="/?lang=ru">RU</a>
+				<a href="/?lang=ru" class="lang">RU</a>
 			</div>
 		</div>
 	</div>

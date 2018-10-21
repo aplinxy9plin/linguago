@@ -159,6 +159,18 @@ html {
 	padding: 1.05rem 1.45rem;
 }
 
+.lang {
+	background: rgb(242, 248, 253, .55);
+	border-radius: 50%;
+	color: #0C54A0;
+	display: inline-block;
+	font-size: 1rem;
+	line-height: 1;
+	padding: 1.1rem .65rem .9rem;
+	text-align: center;
+	width: 30px;
+}
+
 .phone:hover {
 	color: #EE741D;
 	text-decoration: none;
