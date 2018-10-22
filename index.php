@@ -1,5 +1,11 @@
 <?php
   session_start();
+  if(isset($_GET['lang_p'])){
+    $_SESSION['lang_p'] = $_GET['lang_p'];
+  }
+  if(isset($_GET['curr_p'])){
+    $_SESSION['curr_p'] = $_GET['curr_p'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -222,7 +228,7 @@
     <?include 'include/help.php';?>
     <!-- секция с шагами -->
     <?include 'include/steps.php';?>
-    
+
     <!--//END ADD LISTING -->
     <section class="main-block light-bg">
         <div class="container">
@@ -468,6 +474,16 @@
         $(this).parents('.dropdown').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
         $(this).parents('.dropdown').find('.input-hidden').val(selText);
       });
+      $(".flags").click(function(){
+        var selText = $(this).text();
+        $("#change_lang").attr("href", "?lang_p=" + selText);
+        $("#change_lang")[0].click()
+      });
+      $(".curr").click(function(){
+        var selText = $(this).text();
+        $("#change_lang").attr("href", "?curr_p=" + selText);
+        $("#change_lang")[0].click()
+      })
     </script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?158"></script>
     <script>
