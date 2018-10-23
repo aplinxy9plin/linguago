@@ -8,7 +8,7 @@
 		<div class="header__item header__nav">
 			<nav class="nav">
 				<div class="nav__item">
-					<a href="" class="nav__link">Курсы оффлайн</a>
+					<a href="" class="nav__link">Курсы офлайн</a>
 				</div>
 				<div class="nav__item">
 					<a href="" class="nav__link">Курсы онлайн</a>

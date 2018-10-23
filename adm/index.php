@@ -557,7 +557,7 @@
                                             <div class="chart-info__left">
                                                 <div class="chart-note">
                                                     <span class="dot dot--blue"></span>
-                                                    <span>Оффлайн</span>
+                                                    <span>ОФЛАЙН</span>
                                                 </div>
                                                 <div class="chart-note mr-0">
                                                     <span class="dot dot--green"></span>
@@ -1022,7 +1022,7 @@
                               </div>
                               <div class="checkbox">
                                   <label for="checkbox2" class="form-check-label ">
-                                      <input '.$offline.' type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> Оффлайн
+                                      <input '.$offline.' type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> ОФЛАЙН
                                   </label>
                               </div>
                           </div>
@@ -1235,7 +1235,7 @@
                         </div>
                         <div class="checkbox">
                             <label for="checkbox2" class="form-check-label ">
-                                <input '.$offline.' type="checkbox" id="sc_checkbox2" name="checkbox2" value="option2" class="form-check-input"> Оффлайн
+                                <input '.$offline.' type="checkbox" id="sc_checkbox2" name="checkbox2" value="option2" class="form-check-input"> ОФЛАЙН
                             </label>
                         </div>
                     </div>

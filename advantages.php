@@ -45,7 +45,7 @@
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                           <ul class="navbar-nav">
                             <li class="nav-item " style="background-color: #ff3a6d">
-                                <a class="nav-link" href="schools.php?sort=offline">КУРСЫ ОФФЛАЙН</a>
+                                <a class="nav-link" href="schools.php?sort=offline">КУРСЫ ОФЛАЙН</a>
                             </li><hr>
                             <li class="nav-item " style="background-color: #ff3a6d">
                                 <a class="nav-link" href="schools.php?sort=online">КУРСЫ ОНЛАЙН</a>
